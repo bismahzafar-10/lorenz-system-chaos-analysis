@@ -39,51 +39,65 @@ To induce fully developed chaotic flow, parameters are locked to standard theore
 
 ---
 
-## 4. Key Figures & Visualizations
+## ## 4. Key Figures & Visualizations
 
 ### Spatial Perturbation Mesh
+
 The initial condition grid establishes a structured 3D spatial cluster centered around the reference vector $(1.0, 1.0, 1.0)$ to observe multidirectional divergence dynamics.
 
 <p align="center">
-  <img src="/figures/Figure1_Reference_Initial_Conditions_and_Perturbations.png" alt="Reference Initial Conditions and Perturbations" width="70%"/>
-  <br><em>Figure 1: Spatial distribution of perturbed initial conditions around the reference state.</em>
+  <img src="Figures/Reference Initial Conditions and Perturbations.png" alt="Reference Initial Conditions and Perturbations" width="70%"/>
+  <br>
+  <em>Figure 1: Spatial distribution of perturbed initial conditions around the reference state.</em>
 </p>
 
 ---
 
 ### Non-Periodic Time Series Dynamics
+
 Individual trajectories ($x(t)$, $y(t)$, $z(t)$) demonstrate persistent non-periodic oscillations without settling into static equilibria or limit cycles.
 
 <p align="center">
-  <img src="/figures/Figure2_Time_series_data.png" alt="Time Series Data" width="85%"/>
-  <br><em>Figure 2: Time series components x(t), y(t), and z(t) integrated over t = [0, 100].</em>
+  <img src="Figures/Time series data.png" alt="Lorenz System Time Series Data" width="85%"/>
+  <br>
+  <em>Figure 2: Time-series components x(t), y(t), and z(t) integrated over t = [0, 100].</em>
 </p>
 
 ---
 
 ### Attractor Topologies & Dual Trajectory Divergence
-When two trajectories with microscopic initial variance are mapped in 3D phase space, they initially trace identical paths before diverging onto completely different lobes of the fractal butterfly attractor.
 
-| Dual Trajectory Phase Portrait | Multi-Perturbation Ensemble Field |
-| :---: | :---: |
-| <img src="/figures/Figure3_Lorenz_System_Trajectories.png" width="100%"/> | <img src="/figures/Figure6_Lorenz_System_Trajectories_with_Perturbations.png" width="100%"/> |
-| *Figure 3: Dual-trajectory divergence between Initial Condition 1 and 2.* | *Figure 6: Global butterfly attractor under multi-state perturbation ensembles.* |
+When two trajectories with microscopic initial variance are mapped in 3D phase space, they initially trace nearly identical paths before diverging across the characteristic lobes of the Lorenz attractor.
+
+|                                   Dual Trajectory Phase Portrait                                  |                                                    Multi-Perturbation Ensemble Field                                                    |
+| :-----------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="Figures/Lorenz System Trajectories.png" alt="Lorenz System Trajectories" width="100%"/> | <img src="Figures/Lorenz System Trajectories with Perturbations.png" alt="Lorenz System Trajectories with Perturbations" width="100%"/> |
+|           *Figure 3: Dual-trajectory divergence between two nearby initial conditions.*           |                         *Figure 6: Lorenz attractor generated from an ensemble of perturbed initial conditions.*                        |
 
 ---
 
 ### Quantitative Trajectory Separation & Lyapunov Metrics
-The Euclidean distance $d(t)$ between baseline trajectory $\mathbf{X}_{\text{ref}}(t)$ and perturbed state $\mathbf{X}_{\text{pert}}(t)$ grows exponentially over time:
 
-$$d(t) = \sqrt{(x_{\text{ref}} - x_{\text{pert}})^2 + (y_{\text{ref}} - y_{\text{pert}})^2 + (z_{\text{ref}} - z_{\text{pert}})^2}$$
+The Euclidean distance $d(t)$ between the baseline trajectory $\mathbf{X}*{\mathrm{ref}}(t)$ and a perturbed trajectory $\mathbf{X}*{\mathrm{pert}}(t)$ is defined as
 
-| Euclidean Spatial Separation $d(t)$ | Natural Logarithmic Metric $\ln(d(t))$ |
-| :---: | :---: |
-| <img src="/figures/Figure4_Distance_between_Original_and_Perturbed_Trajectories.png" width="100%"/> | <img src="/figures/Figure5_Log_of_Distance_between_Original_and_Perturbed_Trajectories.png" width="100%"/> |
-| *Figure 4: Real-time Euclidean spatial separation distance.* | *Figure 5: Log-transformed separation rate showing linear divergence slope.* |
+$$
+d(t) =
+\sqrt{
+(x_{\mathrm{ref}}-x_{\mathrm{pert}})^2 +
+(y_{\mathrm{ref}}-y_{\mathrm{pert}})^2 +
+(z_{\mathrm{ref}}-z_{\mathrm{pert}})^2
+}.
+$$
+
+|                                                          Euclidean Spatial Separation $d(t)$                                                          |                                                                Natural Logarithmic Metric $\ln(d(t))$                                                               |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="Figures/Distance between Original and Perturbed Trajectories.png" alt="Distance between Original and Perturbed Trajectories" width="100%"/> | <img src="Figures/Log of Distance between Original and Perturbed Trajectories.png" alt="Log of Distance between Original and Perturbed Trajectories" width="100%"/> |
+|                        *Figure 4: Euclidean separation between the reference and perturbed trajectories as a function of time.*                       |                               *Figure 5: Natural logarithm of trajectory separation used to examine the exponential divergence rate.*                               |
 
 #### Empirical Results
+
 * **Calculated Largest Lyapunov Exponent ($\lambda$):** $\approx 0.2135$
-* **Conclusion:** The strictly positive value ($\lambda > 0$) provides mathematical verification of sensitive dependence on initial conditions and empirical chaos.
+* **Interpretation:** The positive value ($\lambda > 0$) indicates exponential sensitivity to initial conditions, providing empirical evidence of chaotic dynamics in the simulated Lorenz system.
 
 ---
 
