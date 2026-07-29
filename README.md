@@ -1,2 +1,115 @@
-# lorenz-system-chaos-analysis
-High-precision numerical analysis of non-periodic atmospheric flow in the Lorenz System. Features adaptive Runge-Kutta trajectory simulation, spatial perturbation grid mapping, and empirical verification of deterministic predictability limits via Lyapunov exponent tracking ($\lambda \approx 0.2135$).
+# Exploring Chaos: Application of the Lorenz System to Atmospheric Predictability
+
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2023b%2B-orange.svg)](https://www.mathworks.com/products/matlab.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+This repository contains the numerical implementations, perturbation grids, and empirical chaos analysis for the research paper: **"Exploring Chaos: Application of the Lorenz System"** by Bismah Zafar (Department of Mathematics, Mount Carmel College, Bengaluru).
+
+---
+
+## 1. Project Overview
+
+Classical physical determinism—famously epitomized by Laplace's demon—suggests complete state predictability given exact initial conditions. However, non-linear atmospheric models demonstrate extreme sensitivity to initial conditions, commonly known as the **"butterfly effect."** 
+
+This project explores the non-periodic Lorenz system using MATLAB numerical simulations to quantify trajectory divergence, derive the empirical maximum Lyapunov exponent, and assess the fundamental predictability limits in meteorological forecasting.
+
+---
+
+## 2. Governing Mathematical Model
+
+The Lorenz system is modeled using three coupled, non-linear ordinary differential equations (ODEs):
+
+$$\frac{dx}{dt} = \sigma(y - x)$$
+$$\frac{dy}{dt} = x(\rho - z) - y$$
+$$\frac{dz}{dt} = xy - \beta z$$
+
+### Standard Parameter Regimes
+To induce fully developed chaotic flow, parameters are locked to standard theoretical values:
+* **Prandtl Number ($\sigma$):** $10.0$
+* **Rayleigh Number ($\rho$):** $28.0$
+* **Geometric Aspect Ratio ($\beta$):** $\frac{8}{3} \approx 2.6667$
+
+---
+
+## 3. Methodology & Numerical Setup
+
+* **Numerical Solver:** Evaluated using MATLAB's explicit `ode45` solver (Runge-Kutta 4th/5th order) across the temporal domain $t \in [0, 100]$ with a uniform time step of $\Delta t = 0.01$.
+* **Reference Initial State:** Control vector set at $(x_0, y_0, z_0) = (1.0, 1.0, 1.0)$.
+* **Perturbation Mesh Grid:** Systematically perturbed around reference states in steps of $\Delta x = 0.2$, $\Delta y = 0.2$, $\Delta z = 0.2$.
+
+---
+
+## 4. Key Figures & Visualizations
+
+### Spatial Perturbation Mesh
+The initial condition grid establishes a structured 3D spatial cluster centered around the reference vector $(1.0, 1.0, 1.0)$ to observe multidirectional divergence dynamics.
+
+<p align="center">
+  <img src="/figures/Figure1_Reference_Initial_Conditions_and_Perturbations.png" alt="Reference Initial Conditions and Perturbations" width="70%"/>
+  <br><em>Figure 1: Spatial distribution of perturbed initial conditions around the reference state.</em>
+</p>
+
+---
+
+### Non-Periodic Time Series Dynamics
+Individual trajectories ($x(t)$, $y(t)$, $z(t)$) demonstrate persistent non-periodic oscillations without settling into static equilibria or limit cycles.
+
+<p align="center">
+  <img src="/figures/Figure2_Time_series_data.png" alt="Time Series Data" width="85%"/>
+  <br><em>Figure 2: Time series components x(t), y(t), and z(t) integrated over t = [0, 100].</em>
+</p>
+
+---
+
+### Attractor Topologies & Dual Trajectory Divergence
+When two trajectories with microscopic initial variance are mapped in 3D phase space, they initially trace identical paths before diverging onto completely different lobes of the fractal butterfly attractor.
+
+| Dual Trajectory Phase Portrait | Multi-Perturbation Ensemble Field |
+| :---: | :---: |
+| <img src="/figures/Figure3_Lorenz_System_Trajectories.png" width="100%"/> | <img src="/figures/Figure6_Lorenz_System_Trajectories_with_Perturbations.png" width="100%"/> |
+| *Figure 3: Dual-trajectory divergence between Initial Condition 1 and 2.* | *Figure 6: Global butterfly attractor under multi-state perturbation ensembles.* |
+
+---
+
+### Quantitative Trajectory Separation & Lyapunov Metrics
+The Euclidean distance $d(t)$ between baseline trajectory $\mathbf{X}_{\text{ref}}(t)$ and perturbed state $\mathbf{X}_{\text{pert}}(t)$ grows exponentially over time:
+
+$$d(t) = \sqrt{(x_{\text{ref}} - x_{\text{pert}})^2 + (y_{\text{ref}} - y_{\text{pert}})^2 + (z_{\text{ref}} - z_{\text{pert}})^2}$$
+
+| Euclidean Spatial Separation $d(t)$ | Natural Logarithmic Metric $\ln(d(t))$ |
+| :---: | :---: |
+| <img src="/figures/Figure4_Distance_between_Original_and_Perturbed_Trajectories.png" width="100%"/> | <img src="/figures/Figure5_Log_of_Distance_between_Original_and_Perturbed_Trajectories.png" width="100%"/> |
+| *Figure 4: Real-time Euclidean spatial separation distance.* | *Figure 5: Log-transformed separation rate showing linear divergence slope.* |
+
+#### Empirical Results
+* **Calculated Largest Lyapunov Exponent ($\lambda$):** $\approx 0.2135$
+* **Conclusion:** The strictly positive value ($\lambda > 0$) provides mathematical verification of sensitive dependence on initial conditions and empirical chaos.
+
+---
+
+## 5. Practical Implications for Weather Forecasting
+
+The empirical chaos demonstrated by $\lambda \approx 0.2135$ explains the structural collapse of deterministic numerical weather prediction (NWP) models beyond ~7–10 days. To mitigate this unpredictability, modern meteorological systems employ:
+
+1. **Ensemble Prediction Systems (EPS):** Running parallel simulations across perturbed initial grids to generate probabilistic likelihood distributions.
+2. **Advanced Data Assimilation:** Continuously incorporating high-frequency satellite and observational data to constrain initial boundary conditions before error saturation occurs.
+3. **Non-linear Dynamics Integration:** Constructing multi-scale parameterizations that inherently handle turbulent atmospheric transitions.
+
+---
+
+## 6. How to Run the MATLAB Scripts
+
+1. Clone this repository:
+   ```bash
+   git clone [https://github.com/your-username/lorenz-system-chaos-analysis.git](https://github.com/your-username/lorenz-system-chaos-analysis.git)
+   cd lorenz-system-chaos-analysis
+   ```
+   
+2. Open MATLAB and navigate to the src/ directory.
+
+3. Execute run_simulations.m to generate integration arrays and evaluate Lyapunov values:
+
+   ```bash
+   run('run_simulations.m')
+   ```
+   
