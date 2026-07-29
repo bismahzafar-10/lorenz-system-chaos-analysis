@@ -126,4 +126,6 @@ The empirical chaos demonstrated by $\lambda \approx 0.2135$ explains the struct
    ```bash
    run('run_simulations.m')
    ```
-   
+
+   ---
+   > 📄 **Full Research Paper:** Read the complete paper in [`docs/Exploring_Chaos_Lorenz_System.pdf`](docs/)
