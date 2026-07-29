@@ -1,0 +1,19 @@
+# MATLAB temporary files
+*.asv
+*.m~
+*.slxc
+*.mex*
+*.p
+*.log
+*.mat
+
+# Figures & Assets build exclusion toggle (uncomment if you only want source tracked)
+# assets/figures/*.png
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Workspace settings
+.vscode/
+.idea/
