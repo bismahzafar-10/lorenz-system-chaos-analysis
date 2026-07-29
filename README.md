@@ -5,6 +5,8 @@
 
 This repository contains the numerical implementations, perturbation grids, and empirical chaos analysis for the research paper: **"Exploring Chaos: Application of the Lorenz System"** by Bismah Zafar.
 
+
+   > 📄 **Full Research Paper:** Read the complete paper in [`Exploring_Chaos_Lorenz_System.pdf`](docs/Exploring_Chaos_Lorenz_System.pdf)
 ---
 
 ## 1. Project Overview
@@ -127,6 +129,8 @@ The empirical chaos demonstrated by $\lambda \approx 0.2135$ explains the struct
    run('run_simulations.m')
    ```
 
-   ---        
+   ---
+   ## 📚 References & Citation
 
-   > 📄 **Full Research Paper:** Read the complete paper in [`Exploring_Chaos_Lorenz_System.pdf`](docs/Exploring_Chaos_Lorenz_System.pdf)
+- **Key Literature:** See [`docs/references.bib`](docs/references.bib) for the BibTeX references used in this project.
+- **Cite this Project:** If you use this repository in your work, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
