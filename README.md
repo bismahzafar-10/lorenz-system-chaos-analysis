@@ -39,7 +39,7 @@ To induce fully developed chaotic flow, parameters are locked to standard theore
 
 ---
 
-## ## 4. Key Figures & Visualizations
+## 4. Key Figures & Visualizations
 
 ### Spatial Perturbation Mesh
 
@@ -55,7 +55,7 @@ The initial condition grid establishes a structured 3D spatial cluster centered 
 
 ### Non-Periodic Time Series Dynamics
 
-Individual trajectories ($x(t)$, $y(t)$, $z(t)$) demonstrate persistent non-periodic oscillations without settling into static equilibria or limit cycles.
+Individual trajectories ($x(t)$, $y(t)$, \$z(t)\$) demonstrate persistent non-periodic oscillations without settling into static equilibria or limit cycles.
 
 <p align="center">
   <img src="Figures/Time series data.png" alt="Lorenz System Time Series Data" width="85%"/>
