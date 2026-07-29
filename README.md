@@ -3,7 +3,7 @@
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2023b%2B-orange.svg)](https://www.mathworks.com/products/matlab.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-This repository contains the numerical implementations, perturbation grids, and empirical chaos analysis for the research paper: **"Exploring Chaos: Application of the Lorenz System"** by Bismah Zafar (Department of Mathematics, Mount Carmel College, Bengaluru).
+This repository contains the numerical implementations, perturbation grids, and empirical chaos analysis for the research paper: **"Exploring Chaos: Application of the Lorenz System"** by Bismah Zafar.
 
 ---
 
