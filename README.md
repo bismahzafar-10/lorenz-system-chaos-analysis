@@ -78,7 +78,7 @@ When two trajectories with microscopic initial variance are mapped in 3D phase s
 
 ### Quantitative Trajectory Separation & Lyapunov Metrics
 
-The Euclidean distance $d(t)$ between the baseline trajectory $\mathbf{X}*{\mathrm{ref}}(t)$ and a perturbed trajectory $\mathbf{X}*{\mathrm{pert}}(t)$ is defined as
+The Euclidean distance $d(t)$ between the baseline trajectory $\mathbf{X}_{\text{ref}}(t)$ and a perturbed trajectory $\mathbf{X}_{\text{pert}}(t)$ is defined as
 
 $$
 d(t) =
