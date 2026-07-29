@@ -132,5 +132,5 @@ The empirical chaos demonstrated by $\lambda \approx 0.2135$ explains the struct
    ---
    ## 📚 References & Citation
 
-- **Key Literature:** See [`docs/references.bib`](docs/references.bib) for the BibTeX references used in this project.
+- **Key Literature:** See [`references.bib`](references.bib) for the BibTeX references used in this project.
 - **Cite this Project:** If you use this repository in your work, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
